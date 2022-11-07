@@ -13,22 +13,15 @@
                     art. After he placed Rat Fink art on an airbrushed monster shirt, the character soon came to
                     symbolize the entire hot-rod/Kustom Kulture scene of the 1950s and 1960s. Roth is accepted as the
                     individual who popularized “Monster Hot Rod” art form.
-                    <a style="color: rgb(255 208 75);"
-                        href="https://www.ratfink.com/">www.ratfink.com</a>
+                    <a style="color: rgb(255 208 75);" href="https://www.ratfink.com/">www.ratfink.com</a>
                 </div>
 
             </div>
 
             <div class="scroll-right">
                 <el-carousel :interval="5000" arrow="always">
-                    <el-carousel-item>
-                        <img class="scrollItem" src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat1.jpg" alt="" />
-                    </el-carousel-item>
-                    <el-carousel-item>
-                        <img class="scrollItem" src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat2.jpg" alt="" />
-                    </el-carousel-item>
-                    <el-carousel-item>
-                        <img class="scrollItem" src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat3.jpg" alt="" />
+                    <el-carousel-item v-for="(item, index) in scrollList" :key="index">
+                        <img class="scrollItem" :src="item" alt="">
                     </el-carousel-item>
                 </el-carousel>
             </div>
@@ -36,14 +29,13 @@
         <div class="scrollBottom">
             <p>
                 Rat Fink is one of the several hot-rod characters created by one of the originators of Kustom
-                    Kulture, Ed “Big Daddy” Roth. Roth’s dislike for Mickey Mouse led him to draw the original Rat Fink
-                    art. After he placed Rat Fink art on an airbrushed monster shirt, the character soon came to
-                    symbolize the entire hot-rod/Kustom Kulture scene of the 1950s and 1960s. Roth is accepted as the
-                    individual who popularized “Monster Hot Rod” art form.
+                Kulture, Ed “Big Daddy” Roth. Roth’s dislike for Mickey Mouse led him to draw the original Rat Fink
+                art. After he placed Rat Fink art on an airbrushed monster shirt, the character soon came to
+                symbolize the entire hot-rod/Kustom Kulture scene of the 1950s and 1960s. Roth is accepted as the
+                individual who popularized “Monster Hot Rod” art form.
             </p>
             <p style="text-align: center;">
-                <a style="color: rgb(255 208 75);"
-                href="https://www.ratfink.com/">www.ratfink.com</a>
+                <a style="color: rgb(255 208 75);" href="https://www.ratfink.com/">www.ratfink.com</a>
             </p>
         </div>
         <div class="body">
@@ -51,34 +43,9 @@
                 <em style="color:rgb(255 208 75)">RECENT </em>PHOTOS
             </div>
             <div class="wrapper">
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat1.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat2.jpg" class="wf-img"></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat3.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat4.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat5.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat6.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat1.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat2.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat3.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat4.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat5.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat6.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat4.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat5.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat6.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat1.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat2.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat3.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat4.jpg" class="wf-img"/></div>               
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat2.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat3.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat4.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat5.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat6.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat4.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat5.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat2.jpg" class="wf-img"/></div>
-                <div class="wf-item"><img src="https://www.roadrunner2002.top:8899/pic/rat/rat/rat2.jpg" class="wf-img"/></div>
+                <div class="wf-item" v-for="(item, index) in rat" :key="index">
+                    <img :src="item" alt="" class="wf-img">
+                </div>
             </div>
         </div>
 
@@ -93,10 +60,14 @@
 </template>
 
 <script>
+import * as _COS from "../../utils/Promise.Bucket.js"
 export default {
     data: function () {
         return {
-            showTop: false //是否显示返回顶部按钮
+            showTop: false, //是否显示返回顶部按钮
+            scrollList: [], // 轮播图URL数据
+            KeyList: "img/rat",
+            rat: [],
         }
     },
     methods: {
@@ -124,10 +95,25 @@ export default {
                     this.showTop = false;
                 }
             })
+        },
+        initBucketPic() {
+            const that = this
+            _COS.getURLbyBucketKey(that.KeyList).then(urlList => {
+                // 测试环境
+                that.rat = urlList
+                that.rat = that.rat.concat(urlList)
+                that.rat = that.rat.concat(urlList)
+                that.rat = that.rat.concat(urlList)
+                that.scrollList.push(urlList[0])
+                that.scrollList.push(urlList[1])
+                that.scrollList.push(urlList[2])
+            })
         }
     },
     mounted() {
         window.addEventListener('scroll', this.scrollEvent);
+        // 图片数据初始化
+        this.initBucketPic()
     },
     destroyed() {
         window.removeEventListener('scroll', this.scrollEvent, false);
@@ -174,12 +160,12 @@ export default {
             overflow: hidden;
             text-overflow: ellipsis;
             font-size: 1vw;
-            overflow:hidden;
-            word-break:break-word;  //用来控制是否切分单词
-            text-overflow:ellipsis;
-            display:-webkit-box;
-            -webkit-box-orient:vertical; 
-            -webkit-line-clamp:20; //用来控制显示行数
+            overflow: hidden;
+            word-break: break-word; //用来控制是否切分单词
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 20; //用来控制显示行数
             text-align: center;
         }
 
@@ -190,10 +176,11 @@ export default {
     }
 }
 
-.scrollBottom{
+.scrollBottom {
     display: none;
-    
+
 }
+
 .cutLine {
     border: 2px #e8e8e8 solid;
     width: 100%;
@@ -248,7 +235,7 @@ export default {
 }
 
 
-.wrapper{
+.wrapper {
     background-color: whitesmoke;
     width: calc(100% - 50px);
     position: relative;
@@ -259,7 +246,7 @@ export default {
 }
 
 
-.wf-item .wf-img{
+.wf-item .wf-img {
     width: 100%;
     height: 100%;
 }
@@ -304,40 +291,45 @@ export default {
     cursor: pointer;
 }
 
-$scrollHeightMid:350px;
-$scrollHeightMin:250px;
+$scrollHeightMid: 350px;
+$scrollHeightMin: 250px;
+
 @media screen and (min-width:577px) and (max-width:768px) {
-    .body{
+    .body {
         padding-left: 10px;
         padding-right: 10px;
     }
-    .scroll{
+
+    .scroll {
         height: $scrollHeightMid;
-        .scroll-left
-        {
-        display: none;
+
+        .scroll-left {
+            display: none;
         }
+
         .el-carousel {
-        height: $scrollHeightMid;
-        }   
+            height: $scrollHeightMid;
+        }
 
         .el-carousel__item.is-active.is-animating {
-        height: $scrollHeightMid;
+            height: $scrollHeightMid;
         }
 
         .el-carousel__item.is-animating {
             height: $scrollHeightMid;
         }
     }
-    .scrollBottom{
+
+    .scrollBottom {
         display: block;
         font-size: 16px;
         font-weight: 600;
         font-family: Russo One, Arial, sans-serif;
         padding: 10px;
     }
-    .wrapper{
-        columns:4;
+
+    .wrapper {
+        columns: 4;
         column-gap: 2px;
     }
 
@@ -345,37 +337,41 @@ $scrollHeightMin:250px;
 
 @media screen and (max-width:576px) {
 
-    .body{
+    .body {
         padding-left: 5px;
         padding-right: 5px;
     }
-    .scroll{
+
+    .scroll {
         height: $scrollHeightMin;
-        .scroll-left
-        {
-        display: none;
+
+        .scroll-left {
+            display: none;
         }
-    .el-carousel {
-        height: $scrollHeightMin;
-        }   
 
-    .el-carousel__item.is-active.is-animating {
-        height: $scrollHeightMin;
+        .el-carousel {
+            height: $scrollHeightMin;
+        }
+
+        .el-carousel__item.is-active.is-animating {
+            height: $scrollHeightMin;
+        }
+
+        .el-carousel__item.is-animating {
+            height: $scrollHeightMin;
+        }
     }
 
-    .el-carousel__item.is-animating {
-        height: $scrollHeightMin;
-    }
-    }
-    .scrollBottom{
+    .scrollBottom {
         display: block;
         font-size: 14px;
         font-weight: 600;
         font-family: Russo One, Arial, sans-serif;
         padding: 5px;
     }
-    .wrapper{
-        columns:2;
+
+    .wrapper {
+        columns: 2;
         column-gap: 2px;
     }
 

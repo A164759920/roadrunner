@@ -18,15 +18,8 @@
 
             <div class="scroll-right">
                 <el-carousel :interval="5000" arrow="always">
-                    <el-carousel-item>
-                        <img class="scrollItem" src="https://www.roadrunner2002.top:8899/pic/cars/drag1.jpg" alt="" />
-                    </el-carousel-item>
-                    <el-carousel-item>
-                        <img class="scrollItem" src="https://www.roadrunner2002.top:8899/pic/cars/truck1.jpg" alt="" />
-                    </el-carousel-item>
-                    <el-carousel-item>
-                        <img class="scrollItem" src="https://www.roadrunner2002.top:8899/pic/engine/engine6.jpg"
-                            alt="" />
+                    <el-carousel-item v-for="(item,index) in scrollList" :key="index">
+                        <img class="scrollItem" :src=item>
                     </el-carousel-item>
                 </el-carousel>
             </div>
@@ -45,7 +38,7 @@
             <div class="imgList">
                 <div class="partTtile" id="drag">DRAGRACING </div>
                 <div class="drag">
-                    <el-image class="imgItem" v-for="(item,index) in drag" :key="index" :src=item
+                    <el-image class="imgItem" v-for="(item, index) in drag" :key="index" :src=item
                         :preview-src-list="drag" lazy>
                         <div slot="placeholder" class="imgItemDefault">
                             <i class="el-icon-picture-outline"></i>
@@ -55,7 +48,7 @@
                 <div class="cutLine"></div>
                 <div class="partTtile" id="truck">TRUCK </div>
                 <div class="truck">
-                    <el-image class="imgItem" v-for="(item,index) in truck" :key="index" :src=item
+                    <el-image class="imgItem" v-for="(item, index) in truck" :key="index" :src=item
                         :preview-src-list="truck" lazy>
                         <div slot="placeholder" class="imgItemDefault">
                             <i class="el-icon-picture-outline"></i>
@@ -66,27 +59,13 @@
                 <div class="cutLine"></div>
                 <div class="partTtile" id="engine">ENGINE BUILD </div>
                 <div class="truck">
-                    <el-image class="imgItem" v-for="(item,index) in engine" :key="index" :src=item
+                    <el-image class="imgItem" v-for="(item, index) in engine" :key="index" :src=item
                         :preview-src-list="engine" lazy>
                         <div slot="placeholder" class="imgItemDefault">
                             <i class="el-icon-picture-outline"></i>
                         </div>
                     </el-image>
                 </div>
-
-
-                <!-- <div class="cutLine"></div>
-                <div class="partTtile" id="engine">ENGINE BUILD </div>
-                <div class="engine">
-                    <el-image class="imgItem" v-for="(item,index) in engine" :key="index" :src=item
-                        :preview-src-list="engine" lazy>
-                        <div slot="placeholder" class="imgItemDefault">
-                            <i class="el-icon-picture-outline"></i>
-                        </div>
-                    </el-image>
-                </div> -->
-
-
             </div>
         </div>
 
@@ -106,46 +85,27 @@
                 </div>
             </div>
         </transition>
-
-
     </div>
 
 </template>
 
 <script>
+import * as _COS from "../../utils/Promise.Bucket.js"
 export default {
     data: function () {
         return {
             showTop: false,//是否显示返回顶部按钮
+            KeyList: [
+                "img/car/drag",
+                // "img/car/truck",
+                // "img/car/engine",
+            ],
+            scrollList: [], // 轮播图URL数据
             drag: [
-                // 'https://cdn.roadrunner2002.top/pic/cars/drag1.jpg',
-                // 'https://cdn.roadrunner2002.top/pic/cars/drag2.jpg',
-                'https://www.roadrunner2002.top:8899/pic/cars/drag1.jpg',
-                'https://www.roadrunner2002.top:8899/pic/cars/drag1.jpg',
-                'https://www.roadrunner2002.top:8899/pic/cars/drag1.jpg',
-                
-                // 'https://www.roadrunner2002.top:8899/pic/cars/drag2.jpg',
-                // 'https://www.roadrunner2002.top:8899/pic/cars/drag3.jpg',
-                // 'https://www.roadrunner2002.top:8899/pic/cars/drag4.jpg',
-                // 'https://www.roadrunner2002.top:8899/pic/cars/drag5.jpg',
-                // 'https://www.roadrunner2002.top:8899/pic/cars/drag6.jpg',
             ],
             truck: [
-                'https://www.roadrunner2002.top:8899/pic/cars/truck1.jpg',
-                'https://www.roadrunner2002.top:8899/pic/cars/truck2.jpg',
-                'https://www.roadrunner2002.top:8899/pic/cars/truck3.jpg',
-                'https://www.roadrunner2002.top:8899/pic/cars/truck4.jpg',
-                'https://www.roadrunner2002.top:8899/pic/cars/truck5.jpg',
-                'https://www.roadrunner2002.top:8899/pic/cars/truck6.jpg',
             ],
             engine: [
-                'https://www.roadrunner2002.top:8899/pic/engine/engine1.jpg',
-                'https://www.roadrunner2002.top:8899/pic/engine/engine2.jpg',
-                'https://www.roadrunner2002.top:8899/pic/engine/engine3.jpg',
-                'https://www.roadrunner2002.top:8899/pic/engine/engine4.jpg',
-                'https://www.roadrunner2002.top:8899/pic/engine/engine2.jpg',
-                'https://www.roadrunner2002.top:8899/pic/engine/engine2.jpg',
-                
             ]
         }
     },
@@ -174,10 +134,40 @@ export default {
                     this.showTop = false;
                 }
             })
+        },
+        /**
+         * 取出存储桶图片并初始化数据
+         * @param {Array} KeyList 存储桶路径数组
+         */
+        initBucketPic(KeyList) {
+            const that = this
+            function SetPicDataByKey(Key, PicData) {
+                const realKey = Key.split("/").slice(-1).toString()
+                if (realKey === "truck") {
+                    that.truck = PicData
+                    that.scrollList.push(PicData[0])
+                }
+                if (realKey === "drag") {
+                    that.drag = PicData
+                    that.scrollList.push(PicData[0])
+                }
+                if (realKey === "engine") {
+                    that.engine = PicData
+                    that.scrollList.push(PicData[0])
+                }
+            }
+            KeyList.forEach(Key => {
+                _COS.getURLbyBucketKey(Key).then(urlList => {
+                    SetPicDataByKey(Key, urlList)
+                })
+
+            });
         }
     },
     mounted() {
         window.addEventListener('scroll', this.scrollEvent);
+        // 图片数据初始化
+        this.initBucketPic(this.KeyList)
     },
     destroyed() {
         window.removeEventListener('scroll', this.scrollEvent, false);
@@ -328,12 +318,14 @@ $scrollHeightWeb: 550px;
     padding-right: 25px;
 
     .drag {
-        width: 100%;   
+        width: 100%;
     }
+
     .truck {
         width: 100%;
     }
-    .engine{
+
+    .engine {
         width: 100%;
     }
 }
@@ -341,6 +333,7 @@ $scrollHeightWeb: 550px;
 .imgItem {
     margin: 2px;
     width: calc(25% - 4px);
+    max-height: 250px;
 }
 
 .imgItemDefault {
@@ -351,7 +344,7 @@ $scrollHeightWeb: 550px;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 .footer {
@@ -419,7 +412,6 @@ $scrollHeightMin: 250px;
     .imgItem {
         margin: 2px;
         width: calc(100%/3 - 4px);
-        // height: 180px;
         aspect-ratio: auto;
     }
 
