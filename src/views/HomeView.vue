@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-    <div class=header v-sticky="{top:0,isVertical:false}">
+    <div class=header v-sticky="{ top: 0, isVertical: false }">
       <div class="small-menu">
         <img src="../../public/menu.svg" alt="" @click="onVerticalMenu">
       </div>
@@ -40,7 +40,10 @@
       </el-menu>
     </div>
     <div class="content">
-      <router-view></router-view>
+
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
     </div>
   </div>
 </template>
@@ -83,6 +86,7 @@ export default {
   background-color: rgb(84 92 100);
   padding-left: 5px;
   border-bottom: 5px solid rgb(255 208 75);
+
   .small-menu {
     display: none;
   }

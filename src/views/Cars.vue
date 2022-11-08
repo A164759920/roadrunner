@@ -1,6 +1,5 @@
 <template>
     <div class="container">
-        <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css" />
         <div class="scroll">
             <div class="scroll-left">
                 <div class="left-LOGO">
@@ -168,6 +167,7 @@ export default {
         window.addEventListener('scroll', this.scrollEvent);
         // 图片数据初始化
         this.initBucketPic(this.KeyList)
+        // _COS.COS_getBucket("img/car/song/song1")
     },
     destroyed() {
         window.removeEventListener('scroll', this.scrollEvent, false);

@@ -1,6 +1,5 @@
 <template>
     <div class="container">
-        <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css" />
         <div class="scroll">
             <div class="scroll-left">
                 <div class="left-LOGO">

@@ -1,6 +1,5 @@
 <template>
     <div class="container">
-        <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css" />
         <div class="scroll">
             <div class="scroll-left">
                 <div class="left-LOGO">
@@ -8,41 +7,18 @@
                     <div style="color:whitesmoke;margin-left: 150px;">2002.top</div>
                 </div>
                 <div class="leftList">
-                    Rat Fink is one of the several hot-rod characters created by one of the originators of Kustom
-                    Kulture, Ed “Big Daddy” Roth. Roth’s dislike for Mickey Mouse led him to draw the original Rat Fink
-                    art. After he placed Rat Fink art on an airbrushed monster shirt, the character soon came to
-                    symbolize the entire hot-rod/Kustom Kulture scene of the 1950s and 1960s. Roth is accepted as the
-                    individual who popularized “Monster Hot Rod” art form.
-                    <a style="color: rgb(255 208 75);" href="https://www.ratfink.com/">www.ratfink.com</a>
                 </div>
-
             </div>
 
             <div class="scroll-right">
                 <el-carousel :interval="5000" arrow="always">
-                    <el-carousel-item>
-                        <img class="scrollItem" src="../../source/music3.jpg" alt="" />
-                    </el-carousel-item>
-                    <el-carousel-item>
-                        <img class="scrollItem" src="../../source/music1.jpg" alt="" />
-                    </el-carousel-item>
-                    <el-carousel-item>
-                        <img class="scrollItem" src="../../source/music2.jpg" alt="" />
+                    <el-carousel-item v-for="(item, index) in scrollList" :key="index">
+                        <img class="scrollItem" :src="item" alt="" />
                     </el-carousel-item>
                 </el-carousel>
             </div>
         </div>
         <div class="scrollBottom">
-            <p>
-                Rat Fink is one of the several hot-rod characters created by one of the originators of Kustom
-                Kulture, Ed “Big Daddy” Roth. Roth’s dislike for Mickey Mouse led him to draw the original Rat Fink
-                art. After he placed Rat Fink art on an airbrushed monster shirt, the character soon came to
-                symbolize the entire hot-rod/Kustom Kulture scene of the 1950s and 1960s. Roth is accepted as the
-                individual who popularized “Monster Hot Rod” art form.
-            </p>
-            <p style="text-align: center;">
-                <a style="color: rgb(255 208 75);" href="https://www.ratfink.com/">www.ratfink.com</a>
-            </p>
         </div>
         <div class="body">
             <div class="musicList">
@@ -50,7 +26,9 @@
                     <img class="cover" :src=item.pic alt="">
                     <div class="musicItemRight">
                         <div class="songName">{{ item.title }}</div>
-                        <div class="downloadButton">DOWNLOAD</div>
+                        <div class="downloadButton" @click="downloadMp3(item)">
+                            DOWNLOAD
+                        </div>
                         <APlayer class="player" :music=item preload='none' />
                     </div>
                 </div>
@@ -59,7 +37,7 @@
                     <div class="songName-min">{{ item.title }}</div>
                     <img class="cover-min" :src=item.pic alt="">
                     <APlayer class="player-min" :music=item preload="none" />
-                    <div class="downloadButton-min">DOWNLOAD</div>
+                    <div class="downloadButton-min" @click="downloadMp3(item)">DOWNLOAD</div>
                 </div>
             </div>
         </div>
@@ -115,9 +93,9 @@ export default {
                 }
             })
         },
-        downloadMp3(filePath) {
-            //将音频文件转换为blob
-            fetch(filePath)
+        downloadMp3(musicObj) {
+            const { src, artist, title } = musicObj
+            fetch(src)
                 .then(res => res.blob())
                 .then(blob => {
                     const a = document.createElement('a')//创建一个a标签
@@ -126,11 +104,11 @@ export default {
                     //将blob转换为URL链接
                     const url = window.URL.createObjectURL(blob)
                     a.href = url
-                    a.download = 'xxx.mp3'
+                    a.download = `${artist}-${title}.mp3`
                     a.click();
                     document.body.removeChild(a)
                     window.URL.revokeObjectURL(url)
-                })``
+                })
         },
         getKey(key) {
             return "music" + key
@@ -203,6 +181,7 @@ export default {
                 that.music = musicItemList
             })
         })
+        // this.initScrollList()
     },
     destroyed() {
         window.removeEventListener('scroll', this.scrollEvent, false);
