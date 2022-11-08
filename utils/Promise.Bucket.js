@@ -5,13 +5,14 @@ const Region = "ap-nanjing";
 const COS = require("cos-js-sdk-v5");
 var cos = new COS({
   // getAuthorization 必选参数
-  
+
   getAuthorization: function (options, callback) {
     // 异步获取临时密钥
     // 服务端 JS 和 PHP 例子：https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/
     // 服务端其他语言参考 COS STS SDK ：https://github.com/tencentyun/qcloud-cos-sts-sdk
     // STS 详细文档指引看：https://cloud.tencent.com/document/product/436/14048
-    var url = "http://127.0.0.1:8888/sts"; // url替换成您自己的后端服务
+    // var url = "http://127.0.0.1:8888/sts"; // url替换成您自己的后端服务
+    var url = "https://server.roadrunner2002.top:8899/sts"; // 生产环境替换为https服务器
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
     xhr.onload = function (e) {
@@ -88,7 +89,7 @@ function COS_getObjectUrl(fileKey) {
         Bucket,
         Region,
         Key: fileKey,
-        Sign:false
+        Sign: false,
       },
       (err, data) => {
         if (err) {
