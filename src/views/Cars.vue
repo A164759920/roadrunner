@@ -96,8 +96,8 @@ export default {
             showTop: false,//是否显示返回顶部按钮
             KeyList: [
                 "img/car/drag",
-                // "img/car/truck",
-                // "img/car/engine",
+                "img/car/truck",
+                "img/car/engine",
             ],
             scrollList: [], // 轮播图URL数据
             drag: [

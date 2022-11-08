@@ -181,7 +181,7 @@ export default {
                 that.music = musicItemList
             })
         })
-        // this.initScrollList()
+        this.initScrollList()
     },
     destroyed() {
         window.removeEventListener('scroll', this.scrollEvent, false);
