@@ -1,0 +1,11 @@
+component: website #组件类型 
+name: vue-starter #组件名称
+app: demo-b051ddc6 #应用名称
+
+inputs:
+  src:
+    src: ./src
+    hook: npm run build
+    dist: ./dist
+  bucketName: my-vue-starter
+  protocol: https
