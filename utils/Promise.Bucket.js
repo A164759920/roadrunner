@@ -2,9 +2,8 @@ const Bucket = "test-1313270013";
 const Region = "ap-nanjing";
 
 // Promise异步封装存储桶工具函数
-const env = process.env.NODE_ENV;
-const proSTS = process.env.PRO_STS || "";
 const COS = require("cos-js-sdk-v5");
+console.log("进来了////");
 var cos = new COS({
   // getAuthorization 必选参数
 
@@ -13,17 +12,16 @@ var cos = new COS({
     // 服务端 JS 和 PHP 例子：https://github.com/tencentyun/cos-js-sdk-v5/blob/master/server/
     // 服务端其他语言参考 COS STS SDK ：https://github.com/tencentyun/qcloud-cos-sts-sdk
     // STS 详细文档指引看：https://cloud.tencent.com/document/product/436/14048
-    // var url = "http://127.0.0.1:8888/sts"; // url替换成您自己的后端服务
-    var url = env === "production" ? proSTS : "http://127.0.0.1:8888/sts";
+    // var url = "https://test.api.roadrunner2002.top:8899/sts";
+    var url = "https://server.roadrunner2002.top:8899/sts";
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
     xhr.onload = function (e) {
       try {
         var data = JSON.parse(e.target.responseText);
-        // console.log(data);
         var credentials = data.data.credentials;
       } catch (e) {
-        // console.log(e);
+        console.log("错误1", e);
       }
       if (!data || !credentials) {
         return console.error(

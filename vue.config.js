@@ -1,5 +1,5 @@
-const BundleAnalyzerPlugin =
-  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin =
+//   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const { defineConfig } = require("@vue/cli-service");
 
 const env = process.env.NODE_ENV;
@@ -37,12 +37,12 @@ module.exports = defineConfig({
     // 删除preload和prefetch
     config.plugins.delete("preload");
     config.plugins.delete("prefetch");
-    config.plugin("webpack-bundle-analyze").use(
-      new BundleAnalyzerPlugin({
-        openAnalyzer: false, //默认不打开浏览器
-        analyzerPort: 8777,
-      })
-    );
+    // config.plugin("webpack-bundle-analyze").use(
+    //   new BundleAnalyzerPlugin({
+    //     openAnalyzer: false, //默认不打开浏览器
+    //     analyzerPort: 8777,
+    //   })
+    // );
     // CDN注入HTML模板
     config.plugin("html").tap((args) => {
       if (process.env.NODE_ENV === "production") {
