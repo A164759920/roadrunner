@@ -1,11 +1,11 @@
-name: Serverless Devs Project CI/CD
+name: Serverless + SCF Project CI/CD
 
 on:
   push:
     branches: [main]
 
 jobs:
-  serverless-devs-cd:
+  CI/CD Deploy:
     runs-on: ubuntu-latest
     strategy:
       matrix:
