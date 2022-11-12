@@ -15,6 +15,8 @@
 
 ### ③ 添加 serverless.yml 和 main.yml 文件
 
+- 详见[2022/11/11]更新
+
 ### ④ 存储桶资源添加跨域 CORS 配置
 
 - SCF 本质将 dist 文件夹 push 到 COS 存储桶中
@@ -30,13 +32,17 @@
 
 ## [2022/11/11] GitHub Actions + 腾讯云 SCF CI/CD 自动部署打包
 
-### serverless 支持
+### ①serverless 支持
 
-**详见 ./serverless.yml 文件**
+- **详见 ./serverless.yml 文件**
 
-### Git Actions workflows 支持
+### ②Git Actions workflows 支持
 
-**详见 ./github/workflows/main.yml 文件**
+- **详见 ./github/workflows/main.yml 文件**
+
+### ③ Action 环境变量支持
+
+- 使用前请先在仓库的 Settings/Secrets/Action 中配置腾讯云的 ID 和 KEY 以便 main.yml 文件使用
 
 ## [2022/11/8] Webpack 配置更新
 
