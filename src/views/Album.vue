@@ -4,9 +4,11 @@
             <div class="scroll-left">
                 <div class="left-LOGO">
                     <div>ROADRUNNER</div>
-                    <div style="color:whitesmoke;margin-left: 150px;">2002.top</div>
+                    <div style="color:whitesmoke;margin-left: 40%;">2002.top</div>
                 </div>
                 <div class="leftList">
+                    Album分区分享站长喜欢的歌曲,不定期上架新歌,有想听的欢迎联系QQ:164759920
+                    <div style="color:rgb(255 208 75)">Just For Fun</div>
                 </div>
             </div>
 
@@ -19,6 +21,13 @@
             </div>
         </div>
         <div class="scrollBottom">
+            <p style="text-align: center;">
+                Album分区分享站长喜欢的歌曲,不定期上架新歌,有想听的欢迎联系QQ:164759920上架
+            <div style="color:rgb(255 208 75);text-align: center;">Just For Fun</div>
+            <div style="color:rgb(255 208 75);text-align: center;font-weight: 800;">\m/</div>
+            </p>
+
+
         </div>
         <div class="body">
             <div class="musicList">
@@ -39,6 +48,15 @@
                     <APlayer class="player-min" :music=item preload="none" />
                     <div class="downloadButton-min" @click="downloadMp3(item)">DOWNLOAD</div>
                 </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footerLine"></div>
+            <div class="footerInfo">
+                <img class="Avatar" src="../../public/logo.png" alt="">
+                <div class="webInfo">@ROADRUNNER2002.top</div>
+                <div class=""></div>
             </div>
         </div>
 
@@ -191,6 +209,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$scrollHeightWeb: 550px;
+
 .container {
     width: 100%;
     background-color: #e8e8e8;
@@ -198,14 +218,14 @@ export default {
 
 .scroll {
     width: 100%;
-    height: 500px;
+    height: 550px;
     display: flex;
     background-color: rgb(84 92 100);
     position: relative;
     z-index: 1;
 
     .scroll-left {
-        width: 25%;
+        width: 30%;
         min-width: 225px;
 
         .left-LOGO {
@@ -214,13 +234,15 @@ export default {
             font-weight: 700;
             background-color: black;
             font-size: 30px;
-            padding-left: 30px;
+            padding-left: 5%;
             height: 75px;
             padding-top: 80px;
             padding-bottom: 20px;
+            width: 100%;
         }
 
         .leftList {
+            font-weight: 600;
             color: whitesmoke;
             padding-left: 10px;
             padding-right: 5px;
@@ -259,15 +281,15 @@ export default {
 }
 
 .el-carousel {
-    height: 500px;
+    height: $scrollHeightWeb;
 }
 
 .el-carousel__item.is-active.is-animating {
-    height: 500px;
+    height: $scrollHeightWeb;
 }
 
 .el-carousel__item.is-animating {
-    height: 500px;
+    height: $scrollHeightWeb;
 }
 
 .scrollItem {
@@ -449,6 +471,7 @@ $scrollHeightMin: 250px;
     }
 
     .scrollBottom {
+        background-color: rgb(84 92 100);
         display: block;
         font-size: 16px;
         font-weight: 600;
@@ -497,6 +520,7 @@ $scrollHeightMin: 250px;
     }
 
     .scrollBottom {
+        background-color: rgb(84 92 100);
         display: block;
         font-size: 14px;
         font-weight: 600;
@@ -504,6 +528,40 @@ $scrollHeightMin: 250px;
         padding: 5px;
     }
 
+
+}
+
+.footer {
+    height: 100px;
+    background-color: #e8e8e8;
+    padding-top: 20px;
+
+    .footerLine {
+        width: 90%;
+        background-color: lightgray;
+        height: 5px;
+        margin: 0 auto;
+    }
+
+    .footerInfo {
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+        justify-content: center;
+
+        .Avatar {
+            width: 50px;
+            height: 50px;
+
+        }
+
+        .webInfo {
+            font-family: Russo One, Arial, sans-serif;
+            color: gray;
+            height: 50px;
+            line-height: 50px;
+        }
+    }
 
 }
 </style>

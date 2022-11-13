@@ -4,7 +4,7 @@
             <div class="scroll-left">
                 <div class="left-LOGO">
                     <div>ROADRUNNER</div>
-                    <div style="color:whitesmoke;margin-left: 150px;">2002.top</div>
+                    <div style="color:whitesmoke;margin-left: 40%;">2002.top</div>
                 </div>
                 <div class="leftList">
                     Rat Fink is one of the several hot-rod characters created by one of the originators of Kustom
@@ -45,6 +45,15 @@
                 <div class="wf-item" v-for="(item, index) in rat" :key="index">
                     <img :src="item" alt="" class="wf-img">
                 </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footerLine"></div>
+            <div class="footerInfo">
+                <img class="Avatar" src="../../public/logo.png" alt="">
+                <div class="webInfo">@ROADRUNNER2002.top</div>
+                <div class=""></div>
             </div>
         </div>
 
@@ -121,6 +130,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$scrollHeightWeb: 550px;
 .container {
     width: 100%;
     background-color: #e8e8e8;
@@ -128,14 +138,14 @@ export default {
 
 .scroll {
     width: 100%;
-    height: 500px;
+    height: $scrollHeightWeb;
     display: flex;
     background-color: rgb(84 92 100);
     position: relative;
     z-index: 1;
 
     .scroll-left {
-        width: 25%;
+        width: 30%;
         min-width: 225px;
 
         .left-LOGO {
@@ -144,10 +154,11 @@ export default {
             font-weight: 700;
             background-color: black;
             font-size: 30px;
-            padding-left: 30px;
+            padding-left: 5%;
             height: 75px;
             padding-top: 80px;
             padding-bottom: 20px;
+            width: 100%;
         }
 
         .leftList {
@@ -199,15 +210,15 @@ export default {
 }
 
 .el-carousel {
-    height: 500px;
+    height: $scrollHeightWeb;
 }
 
 .el-carousel__item.is-active.is-animating {
-    height: 500px;
+    height: $scrollHeightWeb;
 }
 
 .el-carousel__item.is-animating {
-    height: 500px;
+    height: $scrollHeightWeb;
 }
 
 .scrollItem {
@@ -320,6 +331,7 @@ $scrollHeightMin: 250px;
     }
 
     .scrollBottom {
+        background-color: rgb(84 92 100);
         display: block;
         font-size: 16px;
         font-weight: 600;
@@ -362,6 +374,7 @@ $scrollHeightMin: 250px;
     }
 
     .scrollBottom {
+        background-color: rgb(84 92 100);
         display: block;
         font-size: 14px;
         font-weight: 600;
@@ -372,6 +385,39 @@ $scrollHeightMin: 250px;
     .wrapper {
         columns: 2;
         column-gap: 2px;
+    }
+
+}
+.footer {
+    height: 100px;
+    background-color: #e8e8e8;
+    padding-top: 20px;
+
+    .footerLine {
+        width: 90%;
+        background-color: lightgray;
+        height: 5px;
+        margin: 0 auto;
+    }
+
+    .footerInfo {
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+        justify-content: center;
+
+        .Avatar {
+            width: 50px;
+            height: 50px;
+
+        }
+
+        .webInfo {
+            font-family: Russo One, Arial, sans-serif;
+            color: gray;
+            height: 50px;
+            line-height: 50px;
+        }
     }
 
 }

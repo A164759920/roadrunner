@@ -9,7 +9,7 @@
                 <div class="leftList">
                     <div class="leftItem" @click="toLocation('drag')">DRAGRACING</div>
                     <div class="leftItem" @click="toLocation('truck')">TRUCK</div>
-                    <div class="leftItem" @click="toLocation('hot')">HOT ROD</div>
+                    <div class="leftItem" @click="toLocation('hotrod')">HOT ROD</div>
                     <div class="leftItem" @click="toLocation('fox')">FOX BODY</div>
                     <div class="leftItem" @click="toLocation('engine')">ENGINE BUILD</div>
                 </div>
@@ -17,7 +17,7 @@
 
             <div class="scroll-right">
                 <el-carousel :interval="5000" arrow="always">
-                    <el-carousel-item v-for="(item,index) in scrollList" :key="index">
+                    <el-carousel-item v-for="(item, index) in scrollList" :key="index">
                         <img class="scrollItem" :src=item>
                     </el-carousel-item>
                 </el-carousel>
@@ -49,6 +49,28 @@
                 <div class="truck">
                     <el-image class="imgItem" v-for="(item, index) in truck" :key="index" :src=item
                         :preview-src-list="truck" lazy>
+                        <div slot="placeholder" class="imgItemDefault">
+                            <i class="el-icon-picture-outline"></i>
+                        </div>
+                    </el-image>
+                </div>
+
+                <div class="cutLine"></div>
+                <div class="partTtile" id="hotrod">HOT ROD </div>
+                <div class="truck">
+                    <el-image class="imgItem" v-for="(item, index) in hotrod" :key="index" :src=item
+                        :preview-src-list="hotrod" lazy>
+                        <div slot="placeholder" class="imgItemDefault">
+                            <i class="el-icon-picture-outline"></i>
+                        </div>
+                    </el-image>
+                </div>
+
+                <div class="cutLine"></div>
+                <div class="partTtile" id="fox">FOX BODY </div>
+                <div class="truck">
+                    <el-image class="imgItem" v-for="(item, index) in foxbody" :key="index" :src=item
+                        :preview-src-list="fox" lazy>
                         <div slot="placeholder" class="imgItemDefault">
                             <i class="el-icon-picture-outline"></i>
                         </div>
@@ -97,15 +119,16 @@ export default {
             KeyList: [
                 "img/car/drag",
                 "img/car/truck",
+                "img/car/hotrod",
+                "img/car/foxbody",
                 "img/car/engine",
             ],
             scrollList: [], // 轮播图URL数据
-            drag: [
-            ],
-            truck: [
-            ],
-            engine: [
-            ]
+            drag: [],
+            truck: [],
+            hotrod: [],
+            foxbody: [],
+            engine: []
         }
     },
     methods: {
@@ -152,6 +175,14 @@ export default {
                 }
                 if (realKey === "engine") {
                     that.engine = PicData
+                    that.scrollList.push(PicData[0])
+                }
+                if (realKey === "foxbody") {
+                    that.foxbody = PicData
+                    that.scrollList.push(PicData[0])
+                }
+                if (realKey === "hotrod") {
+                    that.hotrod = PicData
                     that.scrollList.push(PicData[0])
                 }
             }
