@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test": "jest ./tests/integration.test.js --testEnvironment node"
+    "test": "jest ./tests/integration.test.js --testEnvironment node",
+    "push": "npm run build && scp -r dist/* root@124.221.249.177:/home/nginx/car"
   },
   "dependencies": {
     "core-js": "^3.8.3",
