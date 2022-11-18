@@ -14,6 +14,7 @@ var cos = new COS({
     // STS 详细文档指引看：https://cloud.tencent.com/document/product/436/14048
     // var url = "https://test.api.roadrunner2002.top:8899/sts";
     var url = "https://server.roadrunner2002.top:8899/sts";
+    
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
     xhr.onload = function (e) {

@@ -49,7 +49,7 @@
 </template>
 
 <script>
-
+import axios from "axios"
 export default {
   data() {
     return {
@@ -74,6 +74,9 @@ export default {
       this.isShowMenu = false
       console.log("关闭")
     }
+  },
+  mounted() {
+    axios.get("https://server.roadrunner2002.top:8899/test_test")
   }
 }
 </script>
